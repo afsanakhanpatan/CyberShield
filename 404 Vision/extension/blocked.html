@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CyberShield Security Alert</title>
+  <style>
+    :root {
+      --bg: #030712;
+      --panel: rgba(17, 24, 39, 0.7);
+      --crimson: #ef4444;
+      --crimson-glow: rgba(239, 68, 68, 0.4);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --font: 'Inter', -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font);
+      background-image: 
+        radial-gradient(circle at 50% 30%, rgba(239, 68, 68, 0.12) 0%, transparent 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      padding: 24px;
+    }
+
+    .warning-container {
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 550px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(239, 68, 68, 0.1);
+      animation: alertGlow 3s infinite alternate;
+    }
+
+    @keyframes alertGlow {
+      from { border-color: rgba(239, 68, 68, 0.2); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(239, 68, 68, 0.05); }
+      to { border-color: rgba(239, 68, 68, 0.45); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 40px rgba(239, 68, 68, 0.2); }
+    }
+
+    .alert-icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--crimson);
+      font-weight: 600;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      word-break: break-all;
+    }
+
+    .blocked-url {
+      color: #fff;
+      font-weight: bold;
+      font-family: monospace;
+      margin-top: 8px;
+      display: block;
+      font-size: 13px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-safety {
+      background: #fff;
+      color: #000;
+      border: none;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-safety:hover {
+      background: #e5e7eb;
+      transform: translateY(-1px);
+    }
+
+    .btn-bypass {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-bypass:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.03);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="warning-container">
+    <div class="alert-icon">🛑</div>
+    <h1>Security Risk Ahead</h1>
+    <div class="subtitle">Deceptive Site Blocked</div>
+    
+    <div class="description">
+      CyberShield has blocked access to this site to protect your personal and financial information. It is flagged as a verified phishing node or lottery scam page.
+      <span class="blocked-url" id="target-url-display">URL: Loading...</span>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-safety" id="btn-back">🛡️ Go Back to Safety</button>
+      <button class="btn btn-bypass" id="btn-proceed">Proceed Anyway (Unsafe)</button>
+    </div>
+  </div>
+
+  <script src="blocked.js"></script>
+</body>
+</html>

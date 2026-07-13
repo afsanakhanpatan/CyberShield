@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "CyberShield",
+  "version": "1.0.0",
+  "description": "Real-time scam, phishing, and financial fraud detection inside WhatsApp Web and Gmail.",
+  "permissions": [
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*",
+    "https://mail.google.com/*",
+    "http://localhost:8090/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*",
+        "https://mail.google.com/*",
+        "http://localhost:5173/test_extension.html"
+      ],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://web.whatsapp.com/*",
+        "https://mail.google.com/*",
+        "http://localhost:5173/test_extension.html"
+      ],
+      "js": ["main_world.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "cybershield-contracts",
+  "version": "1.0.0",
+  "description": "CyberShield Solidity Contracts & Hardhat development environment",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "deploy:local": "npx hardhat run scripts/deploy.js --network localhost",
+    "node": "npx hardhat node"
+  },
+  "dependencies": {
+    "hardhat": "^2.22.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0"
+  }
+}

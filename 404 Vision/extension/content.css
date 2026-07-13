@@ -1,0 +1,198 @@
+/* CyberShield Injected Stylesheet */
+
+/* Badge Styling */
+.cybershield-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  position: relative;
+  vertical-align: middle;
+  user-select: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent;
+}
+
+.cybershield-badge-high {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+  animation: cybershield-pulse-red 2s infinite alternate;
+}
+
+.cybershield-badge-med {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+}
+
+.cybershield-badge-low {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.cybershield-badge-icon {
+  margin-right: 4px;
+  width: 12px;
+  height: 12px;
+}
+
+/* Tooltip Card Styling */
+.cybershield-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  z-index: 999999;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #f8fafc;
+  text-align: left;
+  line-height: 1.4;
+  white-space: normal;
+  pointer-events: auto;
+}
+
+.cybershield-badge:hover .cybershield-tooltip {
+  display: block;
+}
+
+/* Tooltip Inner Structure */
+.cybershield-tooltip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.cybershield-tooltip-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cybershield-tooltip-verdict {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.cybershield-verdict-high {
+  background: #7f1d1d;
+  color: #fca5a5;
+  border: 1px solid #b91c1c;
+}
+
+.cybershield-verdict-med {
+  background: #78350f;
+  color: #fde047;
+  border: 1px solid #d97706;
+}
+
+.cybershield-tooltip-body {
+  font-size: 12px;
+  color: #cbd5e1;
+  margin-bottom: 12px;
+}
+
+.cybershield-tooltip-meta {
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cybershield-meta-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.cybershield-meta-row:last-child {
+  margin-bottom: 0;
+}
+
+.cybershield-meta-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.cybershield-meta-value {
+  color: #e2e8f0;
+  word-break: break-all;
+  text-align: right;
+  max-width: 180px;
+}
+
+/* Action button inside tooltip */
+.cybershield-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(6, 182, 212, 0.2);
+}
+
+.cybershield-btn:hover {
+  background: linear-gradient(135deg, #0891b2, #0e7490);
+  box-shadow: 0 4px 12px -1px rgba(6, 182, 212, 0.4);
+}
+
+.cybershield-btn-loading {
+  background: #334155;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cybershield-btn-success {
+  background: #059669;
+  color: #fff;
+  box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.2);
+}
+
+/* Animations */
+@keyframes cybershield-pulse-red {
+  0% {
+    box-shadow: 0 0 4px rgba(239, 68, 68, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.7);
+  }
+}

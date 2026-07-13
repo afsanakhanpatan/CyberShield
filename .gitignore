@@ -1,0 +1,25 @@
+# Python / Backend
+**/__pycache__/
+**/*.pyc
+**/venv/
+**/.venv/
+**/evidence_log.json
+**/mule_accounts.json
+
+# JavaScript / Node / Dashboard & Blockchain
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/*.local
+**/package-lock.json
+
+# Hardhat / Blockchain
+**/blockchain/artifacts/
+**/blockchain/cache/
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

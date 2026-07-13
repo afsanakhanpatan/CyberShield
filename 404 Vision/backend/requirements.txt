@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+opencv-python-headless
+numpy
+python-levenshtein
+requests
+web3
+psycopg2-binary
+sqlalchemy
